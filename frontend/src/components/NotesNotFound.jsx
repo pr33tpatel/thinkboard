@@ -4,8 +4,8 @@ import { Link } from "react-router";
 
 const NotesNotFound = () => {
   return (
-    <div className="flex items-center justify-center min-h-[70vh] bg-gray-950">
-      <div data-theme="synthwave" className="flex flex-col items-center justify-center gap-6 w-full max-w-lg p-10 rounded-2xl shadow-2xl bg-base-100 border border-primary/40">
+    <div className="flex bg-transparent items-center justify-center min-h-[70vh] bg-gray-950">
+      <div data-theme="synthwave" className="flex flex-col items-center justify-center gap-6 w-full max-w-lg p-10 rounded-2xl shadow-2xl bg-base-100  border-primary/40">
         {/* Animated Icon */}
         <div className="bg-primary/10 rounded-full p-8 mb-2 shadow-lg animate-bounce-slow">
           <NotebookIcon className="size-12 text-primary" />

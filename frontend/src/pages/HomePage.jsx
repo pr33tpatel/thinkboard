@@ -5,6 +5,7 @@ import axios_api from "../lib/axios";
 import toast from "react-hot-toast";
 import NoteCard from "../components/NoteCard";
 import NotesNotFound from "../components/NotesNotFound";
+import { Message } from "../components/Message";
 
 const HomePage = () => {
   const [isRateLimited, setIsRateLimited] = useState(false);
@@ -36,6 +37,8 @@ const HomePage = () => {
     <div className="min-h-screen pt-20">
       <Navbar />
 
+      <Message />
+
       {isRateLimited && <RateLimitedUI />}
 
       <div className="max-w-7xl mx-auto p-4 mt-6">
@@ -56,6 +59,7 @@ const HomePage = () => {
           </div>
         )}
       </div>
+      <div className="absolute inset-0 -z-50 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_7%,#000_60%,#e182c2_105%)]" />
     </div>
   );
 };
