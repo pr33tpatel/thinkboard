@@ -11,6 +11,7 @@ const HomePage = () => {
   const [isRateLimited, setIsRateLimited] = useState(false);
   const [notes, setNotes] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [showMesage, setShowMessage] = useState(true);
 
   useEffect(() => {
     const fetchNotes = async () => {
@@ -39,7 +40,7 @@ const HomePage = () => {
     <div className="min-h-screen pt-20">
       <Navbar />
 
-      <Message />
+      {showMesage && <Message onClose={() => setShowMessage(false)} />}
 
       {isRateLimited && <RateLimitedUI />}
 
