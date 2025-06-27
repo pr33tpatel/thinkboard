@@ -55,7 +55,7 @@ const CreatePage = () => {
   };
 
   return (
-    <div data-theme="synthwave" className="min-h-screen bg-gray-950">
+    <div className="min-h-screen bg-base-300">
       {/* Floating Back Button */}
       <Link to="/" className="fixed top-6 left-6 btn btn-circle btn-ghost shadow-md z-10" title="Back to Notes">
         <ArrowLeftIcon className="size-5" />
@@ -64,11 +64,11 @@ const CreatePage = () => {
       <div className="container mx-auto px-4 py-10 flex flex-col items-center">
         {/* Header Section */}
         <div className="flex flex-col items-center mb-10">
-          <div className="bg-primary/20 rounded-full p-5 mb-3 shadow-lg">
+          <div className="bg-primary/50 rounded-full p-5 mb-3 shadow-lg">
             <NotebookPenIcon className="size-10 text-primary" />
           </div>
-          <h1 className="text-3xl font-extrabold text-primary mb-1">Create a New Note</h1>
-          <p className="text-base-content text-lg opacity-80">Jot down your thoughts, ideas, or reminders. All in one place.</p>
+          <h1 className="text-3xl font-extrabold text-primary/100 mb-1">Create a New Note</h1>
+          <p className="text-base-content text-center text-lg opacity-80">Jot down your thoughts, ideas, or reminders. All in one place.</p>
         </div>
 
         {/* Card Form */}

@@ -80,7 +80,7 @@ const NoteDetailPage = () => {
   }
 
   return (
-    <div data-theme="synthwave" className="min-h-screen bg-gray-950">
+    <div className="min-h-screen bg-base-300">
       {/* Floating Back Button */}
       <Link to="/" className="fixed top-6 left-6 btn btn-circle btn-ghost shadow-md z-10" title="Back to Notes">
         <ArrowLeftIcon className="size-5" />
@@ -123,7 +123,7 @@ const NoteDetailPage = () => {
               </label>
               <textarea
                 placeholder="Write your note here..."
-                className="textarea textarea-bordered textarea-lg min-h-[300px]"
+                className="textarea textarea-bordered textarea-md min-h-[300px]"
                 value={note.content}
                 onChange={(e) => setNote({ ...note, content: e.target.value })}
                 maxLength={2000}

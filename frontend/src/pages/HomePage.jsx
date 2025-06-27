@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 import NoteCard from "../components/NoteCard";
 import NotesNotFound from "../components/NotesNotFound";
 import { Message } from "../components/Message";
+import ThemeDropdown from "../components/ThemeDropdown";
 
 const HomePage = () => {
   const [isRateLimited, setIsRateLimited] = useState(false);
@@ -37,20 +38,14 @@ const HomePage = () => {
     fetchNotes();
   }, []);
   return (
-    <div className="min-h-screen pt-20">
+    <div className=" min-h-screen pt-20">
       <Navbar />
-
-      {showMesage && <Message onClose={() => setShowMessage(false)} />}
 
       {isRateLimited && <RateLimitedUI />}
 
-      <div className="max-w-7xl mx-auto p-4 mt-6">
-        {loading && (
-          <div data-theme="synthwave" className="text-center bg-transparent text-purple-400 font-bold text-3xl py-10">
-            Loading notes...
-          </div>
-        )}
-
+      {showMesage && <Message onClose={() => setShowMessage(false)} />}
+      <div className="max-w-7xl mx-auto p-4 mt-3">
+        {loading && <div className="text-center bg-transparent text-primary font-bold text-3xl py-10">Loading notes...</div>}
         {notes.length === 0 && !isRateLimited && !loading && <NotesNotFound />}
         {/* <NotesNotFound /> */}
         {/* prettier-ignore */}
@@ -62,7 +57,20 @@ const HomePage = () => {
           </div>
         )}
       </div>
-      <div className="absolute inset-0 -z-50 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_7%,#000_60%,#e182c2_105%)]" />
+      {/* <div>
+        <div class="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]">
+          <div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#C9EBFF,transparent)]"></div>
+        </div>
+      </div> */}
+      {/* <div>
+        <div class="absolute top-0 z-[-2] h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]"></div>
+      </div>
+      <div
+        className="absolute inset-0 -z-50 h-full w-full items-center px-5 py-24"
+        style={{
+          background: "radial-gradient(125% 125% at 50% 7%, #000 60%, var(--p) 205%)",
+        }}
+      /> */}
     </div>
   );
 };

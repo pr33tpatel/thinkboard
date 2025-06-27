@@ -12,11 +12,10 @@ export const Message = ({ onClose }) => {
   };
   return (
     <div
-      className={`flex items-center justify-center min-h-[15vh] bg-gray-950 px-2 mt-3 transition-all duration-300 ${isClosing ? "opacity-0 -translate-y-4 pointer-events-none" : "opacity-100 translate-y-0"}
+      className={`flex items-center justify-center min-h-[15vh] bg-transparent px-2 mt-3 transition-all duration-300 ${isClosing ? "opacity-0 -translate-y-4 pointer-events-none" : "opacity-100 translate-y-0"}
     `}
     >
       <div
-        data-theme="synthwave"
         className="
           flex flex-row items-center justify-center
           gap-4 sm:gap-6 w-full
@@ -29,18 +28,24 @@ export const Message = ({ onClose }) => {
         <button onClick={handleClose} className="absolute top-3 right-3 text-bold text-base-content/70 hover:text-error transition-colors" aria-label="Dismss message">
           <XIcon className="size-5" />
         </button>
-        {/* Animated Icon always left */}
-        <div className="flex-shrink-0">
+        {/* Animated Icon always left
+        <div className="flex-shrink-0 border">
           <MessagesSquare size={30} className="text-primary animate-pulse " />
-        </div>
+        </div> */}
 
-        <div className="flex flex-col items-center text-center  w-full">
-          <h3 className="text-lg sm:text-xl font-extrabold text-primary mb-1">Welcome to the Thinkboard</h3>
-          <p className="text-base-content opacity-80 text-sm sm:text-base">
-            Share your ideas, ask questions, or spark a conversation, <space />
-            <span className="underline">all anonymously </span>
-            <span className="font-semibold block">Your message could inspire someone today.</span>
-          </p>
+        <div className="flex flex-col items-center text-center   w-full">
+          {/* prettier-ignore */}
+          <h3 className="text-lg sm:text-xl font-extrabold text-primary  mb-1">
+            Welcome to the Thinkboard
+          </h3>
+
+          <div className="flex flex-row ">
+            <p className="text-base-content opacity-80 text-sm sm:text-base">
+              {/* prettier-ignore */}
+              Share your ideas, ask questions, or spark a conversation, <span className="underline">all anonymously </span>
+              <span className="font-semibold block">Your message could inspire someone today.</span>
+            </p>
+          </div>
         </div>
       </div>
     </div>
